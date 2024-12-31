@@ -1,21 +1,17 @@
 services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
+  web:
+    build: .
     ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
-  python-app:
-    image: python
-    container_name: python-app
-    volumes:
-      - .:/app
-    working_dir: /app
-    command: python main.py
+      - 8080:80
     depends_on:
-      - mongodb
-
-volumes:
-  mongo-data:
+      - db
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
