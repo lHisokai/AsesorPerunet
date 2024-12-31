@@ -3,7 +3,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 import os
 import json
-from config import config
+from src.config import config
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
 creds = None

@@ -1,0 +1,21 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  python-app:
+    image: python
+    container_name: python-app
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python main.py
+    depends_on:
+      - mongodb
+
+volumes:
+  mongo-data:

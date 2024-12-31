@@ -1,7 +1,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-from logger import logger
-from config import config
+from src.logger import logger
+from src.config import config
 from datetime import datetime
 
 data = config["mongo"]

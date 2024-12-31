@@ -1,0 +1,5 @@
+python-dotenv
+pyTelegramBotAPI
+google-api-python-client
+beautifulsoup4
+google-auth-oauthlib

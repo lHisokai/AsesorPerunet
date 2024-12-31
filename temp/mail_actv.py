@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build
 import base64
 from bs4 import BeautifulSoup
-from creds import creds
+from src.creds import creds
 import json
 
 service = build("gmail", "v1", credentials=creds)
